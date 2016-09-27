@@ -119,13 +119,25 @@ namespace Bigrams1
         private void compareButton_Click(object sender, EventArgs e)
         {
             labelBigrams.Text = "Compare '" + word.Text + "' with '" + word2.Text + "'";
-            string ts = "";
-            foreach(string s in bigramlist(word.Text))
+            List<string> list1 = bigramlist(word.Text);
+            List<string> list2 = bigramlist(word2.Text);
+            List<string> newlist1 = new List<string>(list1);
+            List<string> newlist2 = new List<string>(list2);
+            string ts = "unique bigrams in first word:\r\n";
+            foreach(string s in list1)
+            {
+                if (newlist2.Contains(s))
+                {
+                    newlist2.Remove(s);
+                    newlist1.Remove(s);
+                }
+            }
+            foreach(string s in newlist1)
             {
                 ts = ts + s + "; ";
             }
-            ts = ts + "\n versus \n";
-            foreach(string s in bigramlist(word2.Text))
+            ts = ts + "\r\n\r\n unique bigrams in second word:\r\n";
+            foreach(string s in newlist2)
             {
                 ts = ts + s + "; ";
             }

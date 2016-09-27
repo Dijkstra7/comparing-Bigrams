@@ -80,6 +80,7 @@
             // 
             // bigrams
             // 
+            this.bigrams.AcceptsReturn = true;
             this.bigrams.Location = new System.Drawing.Point(113, 197);
             this.bigrams.Multiline = true;
             this.bigrams.Name = "bigrams";
