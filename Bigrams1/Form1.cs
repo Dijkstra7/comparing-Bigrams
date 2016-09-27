@@ -68,9 +68,18 @@ namespace Bigrams1
             if (pB.Checked == false)
             {
                 ActiveForm.Controls["noMiddle"].Visible = true;
+                if (noMiddle.Checked)
+                {
+                    labelExample.Text = "eg: cat -> c+a; c+t; a+t";
+                }
+                else
+                {
+                    labelExample.Text = "eg: cat -> c+a; (c+_)+t; a+t";
+                }
             } else
             {
                 ActiveForm.Controls["noMiddle"].Visible = false;
+                labelExample.Text = "eg. cat -> c+a; a+t";
             }
         }
 
@@ -142,6 +151,17 @@ namespace Bigrams1
                 ts = ts + s + "; ";
             }
             bigrams.Text = ts;
+        }
+
+        private void noMiddle_CheckedChanged(object sender, EventArgs e)
+        {
+            if (noMiddle.Checked)
+            {
+                labelExample.Text = "eg: cat -> c+a; c+t; a+t";
+            }else
+            {
+                labelExample.Text = "eg: cat -> c+a; (c+_)+t; a+t";
+            }
         }
     }
 }

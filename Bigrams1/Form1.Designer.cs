@@ -39,6 +39,7 @@
             this.compareOrCreate = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.word2 = new System.Windows.Forms.TextBox();
+            this.labelExample = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -108,6 +109,7 @@
             this.noMiddle.TabIndex = 6;
             this.noMiddle.Text = "noMiddle";
             this.noMiddle.UseVisualStyleBackColor = true;
+            this.noMiddle.CheckedChanged += new System.EventHandler(this.noMiddle_CheckedChanged);
             // 
             // compareButton
             // 
@@ -149,11 +151,22 @@
             this.word2.Size = new System.Drawing.Size(295, 20);
             this.word2.TabIndex = 10;
             // 
+            // labelExample
+            // 
+            this.labelExample.AutoSize = true;
+            this.labelExample.ForeColor = System.Drawing.Color.Black;
+            this.labelExample.Location = new System.Drawing.Point(419, 42);
+            this.labelExample.Name = "labelExample";
+            this.labelExample.Size = new System.Drawing.Size(133, 13);
+            this.labelExample.TabIndex = 11;
+            this.labelExample.Text = "eg: cat -> c+a; (c+_)+t; a+t";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(948, 329);
+            this.Controls.Add(this.labelExample);
             this.Controls.Add(this.word2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.compareOrCreate);
@@ -185,6 +198,7 @@
         private System.Windows.Forms.CheckBox compareOrCreate;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox word2;
+        private System.Windows.Forms.Label labelExample;
     }
 }
 
